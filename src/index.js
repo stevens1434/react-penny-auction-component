@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import CountDown from './CountDown';
 import './index.css';
+import _ from 'lodash';
 /*import registerServiceWorker from './registerServiceWorker';*/
 
 var item = [
