@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ItemList from './ItemList'
-import CountDown from './CountDown';
+import CountDown from './CountDown.js';
 import _ from 'lodash';
 import $ from 'jquery';
 import './App.css';
@@ -50,7 +50,7 @@ class App extends Component {
       }
   }
 
-  itemBid(e) {
+  itemBid(e, index) {
     this.state.i = this.state.i % this.state.userArr.length;
     let newPrice = this.state.price + 1.00;
     let newBidder = this.state.i + 1;
@@ -79,18 +79,38 @@ class App extends Component {
     let user = this.state.userArr.map( (item, index) => (
       <ItemList user={item} key={index} />
     ))
+
     /*let i = 0;*/
     let bidder = user[this.state.i].props.user;
-    let price = 0.00;
+    let price = this.state.price;
 
     if(this.state.tick === 0 && this.state.stopTick === false) { //refreshes clock on zero
       this.state.tick = 3;
       console.log("tick in render")
       this.timer = setInterval(this.tick, 1000)
     }
-
+    var mappedUser = this.state.userArr.map(function(item, index) {
+      return ([
+        <p key={index}> {user} </p>
+        ])
+      })
+    var mappedItems = this.state.itemArr.map(function(item, index) {
+      return([
+        <div key={index} id="item1" name="item1" className="itemdiv">
+          <p> {item.name} </p>
+          <img src={item.img} />
+          <p>${price}</p>
+          <button type="submit" id="1" className="button" onClick={ (e) => this.itemBid(e) }>Bid on {item.name}</button>
+        </div>
+        ])
+      })
     return (
       <div className="App">
+      <div id="item1" name="item1" className="itemdiv">
+        <p> {mappedItems} </p>
+        <CountDown />
+
+      </div>
         <h1>Things to buy:</h1>
         <div id="item1" name="item1" className="itemdiv">
           <p key="id" className="title">{itemsList[0].props.item.name}</p>
