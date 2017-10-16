@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #d0e5e8;
 }
 p {
   font-size: 20px;
@@ -24,6 +25,9 @@ button {
     border-radius: 10px;
     font-size: 20px;
 }
+p.title {
+  color: #ff0000;
+}
 .itemdiv {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -32,7 +36,8 @@ button {
   margin: 4px;
   border-radius: 8px;
   padding: 5px;
-  min-width: 210px;
+  min-width: 301px;
+  background-color: white;
 }
 .itemdiv:hover {
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.5);
@@ -42,4 +47,5 @@ button {
   margin: 4px;
   border-radius: 8px;
   padding: 5px;
+  background-color: white;
 }
