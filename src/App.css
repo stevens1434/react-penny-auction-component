@@ -1,6 +1,10 @@
 .App {
   text-align: center;
-  background-color: #d0e5e8;
+  background-color: #f9fbff;
+}
+h1 {
+  font-size: 40px;
+  color: #4CAF50;
 }
 p {
   font-size: 20px;
@@ -11,6 +15,9 @@ img {
 }
 hr {
   margin-top: -15px;
+  background-color: #becbe2;
+  border: 1 none;
+  height: 1.5px;
 }
 button {
   background-color: #4CAF50; /* Green */
@@ -24,9 +31,6 @@ button {
     font-size: 16px;
     border-radius: 10px;
     font-size: 20px;
-}
-p.title {
-  color: #ff0000;
 }
 .itemdiv {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -48,4 +52,10 @@ p.title {
   border-radius: 8px;
   padding: 5px;
   background-color: white;
+}
+p.title {
+  color: #ff0000;
+}
+.bidder {
+  background-color: inherit;
 }
